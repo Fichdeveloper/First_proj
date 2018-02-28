@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
+using System.Text;
 
-namespace Win_Calc
+namespace Polinom_C
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Console.Write("Count=");
+            int count = Convert.ToInt32(Console.ReadLine());
+
+            Parcer_str parcer = new Parcer_str(count);
+            parcer.Binary_mass();
+            parcer.Add_Const_one();
+            parcer.Gluing_function();
+
+
         }
     }
 }
